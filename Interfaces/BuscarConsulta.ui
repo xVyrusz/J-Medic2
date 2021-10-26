@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1600</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+    font-family:century gothic;
+    font-size:24px;
+}
+
+QWidget{
+    background-image: url(:/prefijoNuevo/paisaje-cultura-sostenibilidad.jpg);
+}
+
+QFrame{
+    background:rgba(0/0/0/0.8);
+    border-radius:15px;
+}
+
+QPushButton{
+    background:#88c7dc;
+    color:white;
+    border-radius:15px;
+}
+
+QPushButton:hover{
+    color:#333;
+    border-radius:15px;
+    background:#49ebff;
+}
+
+QToolButton{
+    background:red;
+    border-radius:60px;
+
+}
+
+QLabel{
+    color:white;
+    background:transparent;
+}
+
+QLineEdit{
+    background:transparent;
+    border:none;
+    color:#717072;
+    border-bottom:1px solid #717072;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>39</x>
+      <y>29</y>
+      <width>1521</width>
+      <height>801</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>30</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Consulta</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="TablaConsultas">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>190</y>
+       <width>1281</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>ID Consulta</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nombre medico</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Apellido medico</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nombre paciente</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Apellido paciente</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Fecha de consulta</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Motivo de consulta</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Pruebas realizadas</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Diagnostico</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tratamiento</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionRegresar"/>
+   </widget>
+   <widget class="QMenu" name="menuBuscar">
+    <property name="title">
+     <string>Buscar</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionID"/>
+    <addaction name="separator"/>
+    <addaction name="actionMotivo"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuBuscar"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRegresar">
+   <property name="text">
+    <string>Regresar</string>
+   </property>
+  </action>
+  <action name="actionID">
+   <property name="text">
+    <string>ID</string>
+   </property>
+  </action>
+  <action name="actionMotivo">
+   <property name="text">
+    <string>Motivo</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../Imagenes/Imagen.qrc"/>
+ </resources>
+ <connections/>
+</ui>

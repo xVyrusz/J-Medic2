@@ -2,4 +2,34 @@
   <qresource prefix="prefijoNuevo">
     <file>paisaje-cultura-sostenibilidad.jpg</file>
   </qresource>
+  <qresource prefix="Usuario">
+    <file>user.png</file>
+  </qresource>
+  <qresource prefix="Siguiente">
+    <file>right.png</file>
+  </qresource>
+  <qresource prefix="Buscarconsulta">
+    <file>searchConsulta.png</file>
+  </qresource>
+  <qresource prefix="Buscarcita">
+    <file>searchCita.png</file>
+  </qresource>
+  <qresource prefix="Buscarpaciente">
+    <file>searchPx.png</file>
+  </qresource>
+  <qresource prefix="Buscarmedico">
+    <file>searchDoctor.png</file>
+  </qresource>
+  <qresource prefix="Consulta">
+    <file>addConsulta.png</file>
+  </qresource>
+  <qresource prefix="Cita">
+    <file>addCita.png</file>
+  </qresource>
+  <qresource prefix="Paciente">
+    <file>addPx.png</file>
+  </qresource>
+  <qresource prefix="Medico">
+    <file>addDoctor.png</file>
+  </qresource>
 </RCC>

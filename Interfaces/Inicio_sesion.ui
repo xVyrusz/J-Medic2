@@ -41,7 +41,7 @@ QFrame{
 }
 
 QPushButton{
-	background:red;
+	background:#88c7dc;
 	color:white;
 	border-radius:15px;
 }
@@ -49,11 +49,11 @@ QPushButton{
 QPushButton:hover{
 	color:#333;
 	border-radius:15px;
-	background:#49ebff;
+	background:#88c7dc;
 }
 
 QToolButton{
-	background:red;
+	background:#88c7dc;
 	border-radius:60px;
 
 }
@@ -89,14 +89,14 @@ QLineEdit{
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>280</x>
        <y>60</y>
-       <width>141</width>
+       <width>101</width>
        <height>61</height>
       </rect>
      </property>
      <property name="text">
-      <string>LOGIN HERE</string>
+      <string>J-MEDIC</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton">
@@ -104,12 +104,12 @@ QLineEdit{
       <rect>
        <x>60</x>
        <y>500</y>
-       <width>541</width>
+       <width>251</width>
        <height>61</height>
       </rect>
      </property>
      <property name="text">
-      <string>Login</string>
+      <string>Ingresar</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit">
@@ -125,7 +125,7 @@ QLineEdit{
       <string/>
      </property>
      <property name="placeholderText">
-      <string>Username</string>
+      <string>Usuario</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_2">
@@ -144,7 +144,7 @@ QLineEdit{
       <enum>QLineEdit::Password</enum>
      </property>
      <property name="placeholderText">
-      <string>Password</string>
+      <string>Contraseña</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -157,7 +157,7 @@ QLineEdit{
       </rect>
      </property>
      <property name="text">
-      <string>Username</string>
+      <string>Usuario</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -170,7 +170,20 @@ QLineEdit{
       </rect>
      </property>
      <property name="text">
-      <string>Password</string>
+      <string>Contraseña</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>500</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>FACE ID</string>
      </property>
     </widget>
    </widget>
@@ -183,6 +196,11 @@ QLineEdit{
       <height>121</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+image: url(:/Usuario/user.png);
+</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -194,7 +212,7 @@ QLineEdit{
      <x>0</x>
      <y>0</y>
      <width>1600</width>
-     <height>35</height>
+     <height>36</height>
     </rect>
    </property>
   </widget>
