@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BuscarConsulta</class>
- <widget class="QMainWindow" name="BuscarConsulta">
+ <class>BuscarPacienteSangre</class>
+ <widget class="QMainWindow" name="BuscarPacienteSangre">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Buscar consulta</string>
+   <string>Buscar paciente sangre</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -75,9 +75,9 @@ QLineEdit{
     <property name="geometry">
      <rect>
       <x>39</x>
-      <y>29</y>
-      <width>1521</width>
-      <height>801</height>
+      <y>19</y>
+      <width>1511</width>
+      <height>811</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -89,29 +89,29 @@ QLineEdit{
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>550</x>
        <y>30</y>
-       <width>111</width>
-       <height>21</height>
+       <width>381</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Consulta</string>
+      <string>Buscar Paciente Tipo de Sangre</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="TablaConsultas">
+    <widget class="QTableWidget" name="tableWidget">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>190</y>
-       <width>1281</width>
-       <height>381</height>
+       <x>50</x>
+       <y>320</y>
+       <width>1411</width>
+       <height>411</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
      </property>
      <row>
       <property name="text">
@@ -163,56 +163,166 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        <string/>
       </property>
      </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
      <column>
       <property name="text">
-       <string>ID Consulta</string>
+       <string>ID</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre medico</string>
+       <string>Nombre</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Apellido medico</string>
+       <string>Apellido Paterno</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre paciente</string>
+       <string>Apellido Materno</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Apellido paciente</string>
+       <string>Sexo</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Fecha de consulta</string>
+       <string>Peso</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Motivo de consulta</string>
+       <string>Estatura</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Pruebas realizadas</string>
+       <string>Edad</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Diagnostico</string>
+       <string>Teléfono</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Tratamiento</string>
+       <string>Tipo de sangre</string>
       </property>
      </column>
+     <column>
+      <property name="text">
+       <string>Alergias</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>160</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Buscar por tipo de sangre</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="inputTipoSangre">
+     <property name="geometry">
+      <rect>
+       <x>780</x>
+       <y>170</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>A+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>A-</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>B+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>B-</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>AB+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>AB-</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>O+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>O-</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="buscarSangre">
+     <property name="geometry">
+      <rect>
+       <x>1030</x>
+       <y>170</y>
+       <width>141</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Buscar</string>
+     </property>
     </widget>
    </widget>
   </widget>
@@ -225,39 +335,19 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <height>36</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
+   <widget class="QMenu" name="menuMen">
     <property name="title">
      <string>Menú</string>
     </property>
     <addaction name="separator"/>
     <addaction name="actionRegresar"/>
    </widget>
-   <widget class="QMenu" name="menuBuscar">
-    <property name="title">
-     <string>Buscar</string>
-    </property>
-    <addaction name="separator"/>
-    <addaction name="actionID"/>
-    <addaction name="separator"/>
-    <addaction name="actionMotivo"/>
-   </widget>
-   <addaction name="menuMenu"/>
-   <addaction name="menuBuscar"/>
+   <addaction name="menuMen"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionRegresar">
    <property name="text">
     <string>Regresar</string>
-   </property>
-  </action>
-  <action name="actionID">
-   <property name="text">
-    <string>ID</string>
-   </property>
-  </action>
-  <action name="actionMotivo">
-   <property name="text">
-    <string>Motivo</string>
    </property>
   </action>
  </widget>

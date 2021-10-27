@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BuscarConsulta</class>
- <widget class="QMainWindow" name="BuscarConsulta">
+ <class>BuscarMedico</class>
+ <widget class="QMainWindow" name="BuscarMedico">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Buscar consulta</string>
+   <string>Buscar médico</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -76,7 +76,7 @@ QLineEdit{
      <rect>
       <x>39</x>
       <y>29</y>
-      <width>1521</width>
+      <width>1511</width>
       <height>801</height>
      </rect>
     </property>
@@ -90,28 +90,28 @@ QLineEdit{
      <property name="geometry">
       <rect>
        <x>690</x>
-       <y>30</y>
-       <width>111</width>
+       <y>80</y>
+       <width>101</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Consulta</string>
+      <string>Médicos</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="TablaConsultas">
+    <widget class="QTableWidget" name="tablaMedicos">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>190</y>
-       <width>1281</width>
-       <height>381</height>
+       <x>360</x>
+       <y>220</y>
+       <width>771</width>
+       <height>341</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
      </property>
      <row>
       <property name="text">
@@ -163,54 +163,39 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        <string/>
       </property>
      </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
      <column>
       <property name="text">
-       <string>ID Consulta</string>
+       <string>Nombre</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre medico</string>
+       <string>Apellido Paterno</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Apellido medico</string>
+       <string>Apellido Materno</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre paciente</string>
+       <string>Cedula</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Apellido paciente</string>
+       <string>Teléfono</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Fecha de consulta</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Motivo de consulta</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Pruebas realizadas</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Diagnostico</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Tratamiento</string>
+       <string>Turno</string>
       </property>
      </column>
     </widget>
@@ -225,7 +210,7 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <height>36</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
+   <widget class="QMenu" name="menuMen">
     <property name="title">
      <string>Menú</string>
     </property>
@@ -239,9 +224,13 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
     <addaction name="separator"/>
     <addaction name="actionID"/>
     <addaction name="separator"/>
-    <addaction name="actionMotivo"/>
+    <addaction name="actionNombre"/>
+    <addaction name="separator"/>
+    <addaction name="actionCedula"/>
+    <addaction name="separator"/>
+    <addaction name="actionTurno"/>
    </widget>
-   <addaction name="menuMenu"/>
+   <addaction name="menuMen"/>
    <addaction name="menuBuscar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -255,9 +244,19 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
     <string>ID</string>
    </property>
   </action>
-  <action name="actionMotivo">
+  <action name="actionNombre">
    <property name="text">
-    <string>Motivo</string>
+    <string>Nombre</string>
+   </property>
+  </action>
+  <action name="actionCedula">
+   <property name="text">
+    <string>Cedula</string>
+   </property>
+  </action>
+  <action name="actionTurno">
+   <property name="text">
+    <string>Turno</string>
    </property>
   </action>
  </widget>

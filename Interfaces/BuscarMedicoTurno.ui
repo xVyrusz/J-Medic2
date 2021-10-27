@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BuscarConsulta</class>
- <widget class="QMainWindow" name="BuscarConsulta">
+ <class>BuscarMedicoTurno</class>
+ <widget class="QMainWindow" name="BuscarMedicoTurno">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Buscar consulta</string>
+   <string>Buscar médico turno</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -74,9 +74,9 @@ QLineEdit{
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>39</x>
+      <x>49</x>
       <y>29</y>
-      <width>1521</width>
+      <width>1491</width>
       <height>801</height>
      </rect>
     </property>
@@ -89,29 +89,29 @@ QLineEdit{
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>600</x>
        <y>30</y>
-       <width>111</width>
-       <height>21</height>
+       <width>251</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Consulta</string>
+      <string>Buscar Médico Turno</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="TablaConsultas">
+    <widget class="QTableWidget" name="tablaMedicos">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>190</y>
-       <width>1281</width>
-       <height>381</height>
+       <x>370</x>
+       <y>320</y>
+       <width>771</width>
+       <height>291</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
      </property>
      <row>
       <property name="text">
@@ -153,66 +153,80 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        <string/>
       </property>
      </row>
-     <row>
-      <property name="text">
-       <string/>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string/>
-      </property>
-     </row>
      <column>
       <property name="text">
-       <string>ID Consulta</string>
+       <string>ID</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre medico</string>
+       <string>Nombre</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Apellido medico</string>
+       <string>Apellido Paterno</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre paciente</string>
+       <string>Apellido Materno</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Apellido paciente</string>
+       <string>Cedula</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Fecha de consulta</string>
+       <string>Teléfono</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Motivo de consulta</string>
+       <string>Turno</string>
       </property>
      </column>
-     <column>
-      <property name="text">
-       <string>Pruebas realizadas</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Diagnostico</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Tratamiento</string>
-      </property>
-     </column>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>180</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Buscar por turno</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="inputTurno">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>190</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buscarTurno">
+     <property name="geometry">
+      <rect>
+       <x>900</x>
+       <y>190</y>
+       <width>151</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Buscar</string>
+     </property>
     </widget>
    </widget>
   </widget>
@@ -225,39 +239,19 @@ font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <height>36</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
+   <widget class="QMenu" name="menuMne">
     <property name="title">
      <string>Menú</string>
     </property>
     <addaction name="separator"/>
     <addaction name="actionRegresar"/>
    </widget>
-   <widget class="QMenu" name="menuBuscar">
-    <property name="title">
-     <string>Buscar</string>
-    </property>
-    <addaction name="separator"/>
-    <addaction name="actionID"/>
-    <addaction name="separator"/>
-    <addaction name="actionMotivo"/>
-   </widget>
-   <addaction name="menuMenu"/>
-   <addaction name="menuBuscar"/>
+   <addaction name="menuMne"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionRegresar">
    <property name="text">
     <string>Regresar</string>
-   </property>
-  </action>
-  <action name="actionID">
-   <property name="text">
-    <string>ID</string>
-   </property>
-  </action>
-  <action name="actionMotivo">
-   <property name="text">
-    <string>Motivo</string>
    </property>
   </action>
  </widget>

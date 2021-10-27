@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>AddDoctor</class>
+ <widget class="QMainWindow" name="AddDoctor">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Registrar médico</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -365,7 +365,7 @@ color: rgb(0, 0, 0);</string>
    </property>
    <widget class="QMenu" name="menuMenu">
     <property name="title">
-     <string>Menu</string>
+     <string>Menú</string>
     </property>
     <addaction name="separator"/>
     <addaction name="actionRegresar"/>

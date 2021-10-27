@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>BuscarConsultaId</class>
+ <widget class="QMainWindow" name="BuscarConsultaId">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Buscar consulta ID</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -388,8 +388,21 @@ font: 10.5pt &quot;MS Shell Dlg 2&quot;
      <height>36</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMen">
+    <property name="title">
+     <string>Menú</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionRegresar"/>
+   </widget>
+   <addaction name="menuMen"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRegresar">
+   <property name="text">
+    <string>Regresar</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../Imagenes/Imagen.qrc"/>
