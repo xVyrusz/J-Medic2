@@ -26,71 +26,7 @@
    <string>Menu</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-    font-family:century gothic;
-    font-size:24px;
-}
-
-QWidget{
-    background-image: url(:/prefijoNuevo/paisaje-cultura-sostenibilidad.jpg);
-}
-
-QFrame{
-    background:rgba(0/0/0/0.8);
-    border-radius:15px;
-}
-
-QPushButton{
-    background:#88c7dc;
-    color:white;
-    border-radius:15px;
-}
-
-QPushButton:hover{
-    color:#333;
-    border-radius:15px;
-    background:#49ebff;
-}
-
-QToolButton{
-    background:red;
-    border-radius:60px;
-
-}
-
-QLabel{
-    color:white;
-    background:transparent;
-}
-
-QLineEdit{
-    background:transparent;
-    border:none;
-    color:#717072;
-    border-bottom:1px solid #717072;
-}
-#label_13{
-background-image: url(:/Editarmedico/editDoctor.png);
-}
-#label_12{
-background-image: url(:/Editarpaciente/editPx.png);
-}
-#label_19
-{
-background-image: url(:/Editarconsulta/editConsulta.png);
-}
-#label_15{
-image: url(:/Editarcita/editCita.png);
-}
-#label_16{
-image: url(:/Eliminarconsulta/deleteConsulta.png);
-}
-#label_17{
-background-image: url(:/Eliminarcita/deleteCita.png);
-}
-#label_18{
-background-image: url(:/Regresar/left.png);
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -141,7 +77,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -163,7 +98,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -236,7 +170,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -258,7 +191,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="toolTipDuration">
@@ -324,7 +256,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -346,7 +277,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -406,7 +336,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -428,7 +357,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -488,7 +416,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -510,7 +437,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -570,7 +496,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -592,7 +517,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -652,7 +576,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -674,7 +597,6 @@ background:rgba(0/0/0/0.3);
       <property name="font">
        <font>
         <family>century gothic</family>
-        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -709,7 +631,7 @@ background:rgba(0/0/0/0.3);
      <x>0</x>
      <y>0</y>
      <width>1600</width>
-     <height>36</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMen">
@@ -724,7 +646,12 @@ background:rgba(0/0/0/0.3);
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionRegresar">
    <property name="text">
-    <string>Regresar</string>
+    <string>Cerrar Sesion</string>
+   </property>
+  </action>
+  <action name="actionCerrar_Sesion">
+   <property name="text">
+    <string>Cerrar Sesion</string>
    </property>
   </action>
  </widget>
