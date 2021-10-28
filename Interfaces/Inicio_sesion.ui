@@ -26,49 +26,7 @@
    <string>Inicio de sesion</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-	font-family:century gothic;
-	font-size:24px;
-}
-
-QWidget{
-	background-image: url(:/prefijoNuevo/paisaje-cultura-sostenibilidad.jpg);
-}
-
-QFrame{
-	background:rgba(0/0/0/0.8);
-	border-radius:15px;
-}
-
-QPushButton{
-	background:#88c7dc;
-	color:white;
-	border-radius:15px;
-}
-
-QPushButton:hover{
-	color:#333;
-	border-radius:15px;
-	background:#88c7dc;
-}
-
-QToolButton{
-	background:#88c7dc;
-	border-radius:60px;
-
-}
-
-QLabel{
-	color:white;
-	background:transparent;
-}
-
-QLineEdit{
-	background:transparent;
-	border:none;
-	color:#717072;
-	border-bottom:1px solid #717072;
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -89,10 +47,10 @@ QLineEdit{
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>280</x>
-       <y>60</y>
-       <width>101</width>
-       <height>61</height>
+       <x>200</x>
+       <y>50</y>
+       <width>311</width>
+       <height>141</height>
       </rect>
      </property>
      <property name="text">
@@ -187,24 +145,6 @@ QLineEdit{
      </property>
     </widget>
    </widget>
-   <widget class="QToolButton" name="toolButton">
-    <property name="geometry">
-     <rect>
-      <x>730</x>
-      <y>60</y>
-      <width>121</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-image: url(:/Usuario/user.png);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -212,7 +152,7 @@ image: url(:/Usuario/user.png);
      <x>0</x>
      <y>0</y>
      <width>1600</width>
-     <height>36</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
