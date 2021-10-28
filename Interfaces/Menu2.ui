@@ -68,6 +68,28 @@ QLineEdit{
     border:none;
     color:#717072;
     border-bottom:1px solid #717072;
+}
+#label_13{
+background-image: url(:/Editarmedico/editDoctor.png);
+}
+#label_12{
+background-image: url(:/Editarpaciente/editPx.png);
+}
+#label_19
+{
+background-image: url(:/Editarconsulta/editConsulta.png);
+}
+#label_15{
+image: url(:/Editarcita/editCita.png);
+}
+#label_16{
+image: url(:/Eliminarconsulta/deleteConsulta.png);
+}
+#label_17{
+background-image: url(:/Eliminarcita/deleteCita.png);
+}
+#label_18{
+background-image: url(:/Regresar/left.png);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -161,7 +183,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Editarmedico/editDoctor.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -262,7 +284,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/Editarcita/editCita.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -344,7 +366,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Regresar/left.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -426,7 +448,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Editarpaciente/editPx.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -508,7 +530,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/Eliminarconsulta/deleteConsulta.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -558,7 +580,7 @@ background:rgba(0/0/0/0.3);
        <string>Editar Consulta</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="editarConsulta_2">
+     <widget class="QPushButton" name="editarConsulta">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -590,7 +612,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Editarconsulta/editConsulta.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -672,7 +694,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Eliminarcita/deleteCita.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>

@@ -68,6 +68,33 @@ QLineEdit{
     border:none;
     color:#717072;
     border-bottom:1px solid #717072;
+}
+#label_13{
+background-image: url(:/Medico/addDoctor.png);
+}
+#label_12{
+background-image: url(:/Paciente/addPx.png);
+}
+#label_14{
+background-image: url(:/Consulta/addConsulta.png);
+}
+#label_15{
+background-image: url(:/Cita/addCita.png);
+}
+#label_16{
+image: url(:/Buscarmedico/searchDoctor.png);
+}
+#label_17{
+background-image: url(:/Buscarpaciente/searchPx.png);
+}
+#label_18{
+background-image: url(:/Buscarcita/searchCita.png);
+}
+#label_19{
+background-image: url(:/Buscarconsulta/searchConsulta.png);
+}
+#label_20{
+background-image: url(:/Siguiente/right.png);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -196,7 +223,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Medico/addDoctor.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -278,7 +305,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Paciente/addPx.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -448,7 +475,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Cita/addCita.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -530,7 +557,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/Buscarmedico/searchDoctor.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -612,7 +639,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Buscarpaciente/searchPx.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -694,7 +721,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Buscarcita/searchCita.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -776,7 +803,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Buscarconsulta/searchConsulta.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -864,7 +891,7 @@ background:rgba(0/0/0/0.3);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/Siguiente/right.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
