@@ -26,49 +26,7 @@
    <string>Nueva Consulta</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-    font-family:century gothic;
-    font-size:24px;
-}
-
-QWidget{
-    background-image: url(:/prefijoNuevo/paisaje-cultura-sostenibilidad.jpg);
-}
-
-QFrame{
-    background:rgba(0/0/0/0.8);
-    border-radius:15px;
-}
-
-QPushButton{
-    background:#88c7dc;
-    color:white;
-    border-radius:15px;
-}
-
-QPushButton:hover{
-    color:#333;
-    border-radius:15px;
-    background:#49ebff;
-}
-
-QToolButton{
-    background:red;
-    border-radius:60px;
-
-}
-
-QLabel{
-    color:white;
-    background:transparent;
-}
-
-QLineEdit{
-    background:transparent;
-    border:none;
-    color:#717072;
-    border-bottom:1px solid #717072;
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -196,9 +154,9 @@ QLineEdit{
      <property name="geometry">
       <rect>
        <x>290</x>
-       <y>240</y>
-       <width>191</width>
-       <height>28</height>
+       <y>237</y>
+       <width>201</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -469,7 +427,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1600</width>
-     <height>36</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
