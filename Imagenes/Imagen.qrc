@@ -2,6 +2,27 @@
   <qresource prefix="prefijoNuevo">
     <file>paisaje-cultura-sostenibilidad.jpg</file>
   </qresource>
+  <qresource prefix="Editarmedico">
+    <file>editDoctor.png</file>
+  </qresource>
+  <qresource prefix="Editarpaciente">
+    <file>editPx.png</file>
+  </qresource>
+  <qresource prefix="Editarconsulta">
+    <file>editConsulta.png</file>
+  </qresource>
+  <qresource prefix="Editarcita">
+    <file>editCita.png</file>
+  </qresource>
+  <qresource prefix="Eliminarconsulta">
+    <file>deleteConsulta.png</file>
+  </qresource>
+  <qresource prefix="Eliminarcita">
+    <file>deleteCita.png</file>
+  </qresource>
+  <qresource prefix="Regresar">
+    <file>left.png</file>
+  </qresource>
   <qresource prefix="Usuario">
     <file>user.png</file>
   </qresource>
