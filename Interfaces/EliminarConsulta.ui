@@ -26,56 +26,14 @@
    <string>Eliminar consulta</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-    font-family:century gothic;
-    font-size:24px;
-}
-
-QWidget{
-    background-image: url(:/prefijoNuevo/paisaje-cultura-sostenibilidad.jpg);
-}
-
-QFrame{
-    background:rgba(0/0/0/0.8);
-    border-radius:15px;
-}
-
-QPushButton{
-    background:#88c7dc;
-    color:white;
-    border-radius:15px;
-}
-
-QPushButton:hover{
-    color:#333;
-    border-radius:15px;
-    background:#49ebff;
-}
-
-QToolButton{
-    background:red;
-    border-radius:60px;
-
-}
-
-QLabel{
-    color:white;
-    background:transparent;
-}
-
-QLineEdit{
-    background:transparent;
-    border:none;
-    color:#717072;
-    border-bottom:1px solid #717072;
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>30</y>
+      <y>20</y>
       <width>1511</width>
       <height>801</height>
      </rect>
@@ -374,7 +332,7 @@ background-color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1611</width>
-     <height>36</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMen">
