@@ -16,6 +16,25 @@ class WindowTwo(QtWidgets.QMainWindow):
         self.botonGuardar.clicked.connect(self.switch)
         self.actionRegresar.setShortcut("Ctrl+R")
         self.actionRegresar.triggered.connect(self.switch)
+        self.validar()
+
+    def validar(self):
+        self.inputNombre.textChanged.connect(self.validar_nombre)
+        pass
+
+    def validar_nombre(self):
+        nombre = self.inputNombre.text()
+        validar = re.match(
+            "^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", nombre, re.I)
+        if nombre == "":
+            self.inputNombre.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputNombre.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputNombre.setStyleSheet("border: 2px solid green;")
+            return True
 
     def estilos(self):
         estilo = """
