@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>900</height>
+    <width>1100</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1600</width>
-    <height>900</height>
+    <width>1100</width>
+    <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1100</width>
+    <height>700</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -100,7 +100,7 @@
     <widget class="QLineEdit" name="inputIdPaciente">
      <property name="geometry">
       <rect>
-       <x>570</x>
+       <x>450</x>
        <y>130</y>
        <width>271</width>
        <height>31</height>
@@ -114,8 +114,8 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>1030</x>
-       <y>100</y>
+       <x>810</x>
+       <y>90</y>
        <width>231</width>
        <height>21</height>
       </rect>
@@ -166,7 +166,7 @@
     <widget class="QPushButton" name="generarIdConsulta">
      <property name="geometry">
       <rect>
-       <x>1040</x>
+       <x>760</x>
        <y>230</y>
        <width>291</width>
        <height>41</height>
@@ -182,7 +182,7 @@
        <x>280</x>
        <y>290</y>
        <width>911</width>
-       <height>192</height>
+       <height>91</height>
       </rect>
      </property>
      <property name="maximumSize">
@@ -271,8 +271,8 @@ color: rgb(0, 0, 0);
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>500</y>
+       <x>120</x>
+       <y>400</y>
        <width>301</width>
        <height>31</height>
       </rect>
@@ -284,8 +284,8 @@ color: rgb(0, 0, 0);
     <widget class="QLineEdit" name="inputIdConsulta">
      <property name="geometry">
       <rect>
-       <x>440</x>
-       <y>510</y>
+       <x>390</x>
+       <y>390</y>
        <width>301</width>
        <height>31</height>
       </rect>
@@ -297,8 +297,8 @@ color: rgb(0, 0, 0);
     <widget class="QPushButton" name="guardarConsulta">
      <property name="geometry">
       <rect>
-       <x>1070</x>
-       <y>500</y>
+       <x>730</x>
+       <y>400</y>
        <width>311</width>
        <height>41</height>
       </rect>
@@ -310,8 +310,8 @@ color: rgb(0, 0, 0);
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>540</y>
+       <x>100</x>
+       <y>430</y>
        <width>231</width>
        <height>21</height>
       </rect>
@@ -323,8 +323,8 @@ color: rgb(0, 0, 0);
     <widget class="QTextEdit" name="inputPruebasRealizadas">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>580</y>
+       <x>90</x>
+       <y>450</y>
        <width>221</width>
        <height>201</height>
       </rect>
@@ -336,8 +336,8 @@ color: rgb(0, 0, 0);
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>540</y>
+       <x>430</x>
+       <y>420</y>
        <width>151</width>
        <height>31</height>
       </rect>
@@ -349,8 +349,8 @@ color: rgb(0, 0, 0);
     <widget class="QTextEdit" name="inputDiagnostico">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>580</y>
+       <x>410</x>
+       <y>450</y>
        <width>231</width>
        <height>201</height>
       </rect>
@@ -362,8 +362,8 @@ color: rgb(0, 0, 0);
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
-       <x>770</x>
-       <y>550</y>
+       <x>760</x>
+       <y>440</y>
        <width>151</width>
        <height>21</height>
       </rect>
@@ -375,8 +375,8 @@ color: rgb(0, 0, 0);
     <widget class="QTextEdit" name="inputTratamiento">
      <property name="geometry">
       <rect>
-       <x>770</x>
-       <y>580</y>
+       <x>730</x>
+       <y>460</y>
        <width>231</width>
        <height>201</height>
       </rect>
@@ -388,7 +388,7 @@ color: rgb(0, 0, 0);
     <widget class="QComboBox" name="inputMotivoConsulta">
      <property name="geometry">
       <rect>
-       <x>1030</x>
+       <x>760</x>
        <y>130</y>
        <width>271</width>
        <height>31</height>
@@ -426,8 +426,8 @@ color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1600</width>
-     <height>21</height>
+     <width>1100</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
