@@ -2,7 +2,6 @@ import re
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
-
 class WindowTwo(QtWidgets.QMainWindow):
 
     switch_window = QtCore.pyqtSignal()
@@ -13,13 +12,17 @@ class WindowTwo(QtWidgets.QMainWindow):
         self.setWindowTitle("J-Medic: Menu 1")
         self.stylesheet = self.estilos()
         self.setStyleSheet(self.stylesheet)
-        self.botonGuardar.clicked.connect(self.switch)
+        self.botonGuardar.clicked.connect(self.validar_datos)
         self.actionRegresar.setShortcut("Ctrl+R")
         self.actionRegresar.triggered.connect(self.switch)
         self.validar()
 
     def validar(self):
         self.inputNombre.textChanged.connect(self.validar_nombre)
+        self.inputAp.textChanged.connect(self.validar_apellidoP)
+        self.inputAm.textChanged.connect(self.validar_apellidoM)
+        self.inputTelefono.textChanged.connect(self.validar_telefono)
+        self.inputAlergias.textChanged.connect(self.validar_alergia)
         pass
 
     def validar_nombre(self):
@@ -35,6 +38,129 @@ class WindowTwo(QtWidgets.QMainWindow):
         else:
             self.inputNombre.setStyleSheet("border: 2px solid green;")
             return True
+
+    def validar_apellidoP(self):
+        apellido = self.inputAp.text()
+        validar = re.match(
+            "^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", apellido, re.I)
+        if apellido == "":
+            self.inputAp.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputAp.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputAp.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_apellidoM(self):
+        apellido = self.inputAm.text()
+        validar = re.match(
+            "^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", apellido, re.I)
+        if apellido == "":
+            self.inputAm.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputAm.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputAm.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_sexo(self):
+        sexo = self.inputSexo.currentText()
+        if sexo == "":
+            return False
+        else:
+            return True
+
+    def validar_peso(self):
+        pesok = self.inputKg.currentText()
+        pesog = self.inputG.currentText()
+        cont = 0
+        if pesog == "":
+            cont += 1
+
+        if pesok == "":
+            cont += 1
+
+        peso = str(pesok+pesog)
+        if cont > 0:
+            peso = ""
+
+        if peso == "":
+            return False
+        else:
+            return True
+
+    def validar_estatura(self):
+        estaturam = self.inputM.currentText()
+        estaturacm = self.inputCm.currentText()
+        cont = 0
+        if estaturacm == "":
+            cont += 1
+
+        if estaturam == "":
+            cont += 1
+
+        estatura = str(estaturam + estaturacm)
+        if cont > 0:
+            estatura = ""
+
+        if estatura == "":
+            return False
+        else:
+            return True
+
+    def validar_anios(self):
+        anios = self.inputEdad.currentText()
+        if anios == "":
+            return False
+        else:
+            return True
+
+    def validar_telefono(self):
+        telefono = self.inputTelefono.text()
+        validar = re.match("^\d{10}$", telefono, re.I)
+        if telefono == "":
+            self.inputTelefono.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputTelefono.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputTelefono.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_sangre(self):
+        sangre = self.inputTipoSangre.currentText()
+        if sangre == "":
+            return False
+        else:
+            return True
+
+    def validar_alergia(self):
+        alergias = self.inputAlergias.text()
+        validar = re.match(
+            "^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", alergias, re.I)
+        if alergias == "":
+            self.inputAlergias.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputAlergias.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputAlergias.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_datos(self):
+        if self.validar_nombre() and self.validar_sexo() and self.validar_apellidoP() and self.validar_peso() and self.validar_apellidoM() and self.validar_estatura() and self.validar_telefono() and self.validar_anios() and self.validar_alergia() and self.validar_sangre():
+            QMessageBox.information(
+                    self, "Datos guardados", "Su informacion se ha guardado correctamente", QMessageBox.Discard)
+            self.switch()
+        else:
+           QMessageBox.warning(
+                self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard) 
 
     def estilos(self):
         estilo = """
