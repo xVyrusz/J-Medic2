@@ -140,7 +140,7 @@ class WindowTwo(QtWidgets.QMainWindow):
             return True
 
     def validar_alergia(self):
-        alergias = self.inputAlergias.text()
+        alergias = self.inputAlergias.toPlainText()
         validar = re.match(
             "^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", alergias, re.I)
         if alergias == "":
