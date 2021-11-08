@@ -57,7 +57,7 @@
       <string>Pacientes</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="tablaPacientes">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -223,7 +223,7 @@ background-color: rgb(255, 255, 255);</string>
       <string>Buscar por ID</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="inputId">
+    <widget class="QLineEdit" name="inputIdPaciente">
      <property name="geometry">
       <rect>
        <x>390</x>
@@ -262,7 +262,7 @@ background-color: rgb(255, 255, 255);</string>
       <string>Buscar por nombre</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="inputNombre">
      <property name="geometry">
       <rect>
        <x>390</x>
@@ -301,7 +301,7 @@ background-color: rgb(255, 255, 255);</string>
       <string>Buscar por apellido paterno</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="inputAp">
      <property name="geometry">
       <rect>
        <x>490</x>
@@ -335,7 +335,7 @@ background-color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1150</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMen">
@@ -369,8 +369,6 @@ background-color: rgb(255, 255, 255);</string>
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../Imagenes/Imagen.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

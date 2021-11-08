@@ -62,6 +62,35 @@ class WindowTwo(QtWidgets.QMainWindow):
             color:#717072;
             border-bottom:1px solid #717072;
         }
+        #inputNombre{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputAp{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputAm{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputCedula{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputTelefono{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputUsuario{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputContra{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+
         """
         return estilo
 

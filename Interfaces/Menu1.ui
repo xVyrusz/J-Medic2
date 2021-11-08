@@ -818,7 +818,7 @@ background:rgba(0/0/0/0.3);
      <x>0</x>
      <y>0</y>
      <width>1150</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -836,8 +836,6 @@ background:rgba(0/0/0/0.3);
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../Imagenes/Imagen.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

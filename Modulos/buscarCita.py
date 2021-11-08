@@ -63,6 +63,15 @@ class WindowTwo(QtWidgets.QMainWindow):
             color:#717072;
             border-bottom:1px solid #717072;
         }
+        #inputIdCita{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+        #inputIdPaciente{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        }
+
         """
         return estilo
 

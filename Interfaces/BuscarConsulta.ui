@@ -687,8 +687,6 @@ background-color: rgb(255, 255, 255);</string>
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../Imagenes/Imagen.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
