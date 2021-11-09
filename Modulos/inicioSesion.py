@@ -23,7 +23,7 @@ class Login(QtWidgets.QMainWindow):
         }
 
         QWidget{
-            background-image: url(Imagenes/paisaje-cultura-sostenibilidad.jpg);
+            background-image: url(Imagenes/pru.jpg);
             background-color: white;
         }
 

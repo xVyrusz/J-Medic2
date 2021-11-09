@@ -170,7 +170,7 @@ class WindowTwo(QtWidgets.QMainWindow):
         }
 
         QWidget{
-            background-image: url(Imagenes/paisaje-cultura-sostenibilidad.jpg);
+            background-image: url(Imagenes/pru.jpg);
         }
 
         QFrame{
