@@ -15,10 +15,68 @@ class WindowTwo(QtWidgets.QMainWindow):
         self.stylesheet = self.estilos()
         self.setStyleSheet(self.stylesheet)
         self.guardarConsulta.clicked.connect(self.switch)
-        self.generarIdConsulta.clicked.connect(self.switch)
-        self.botonFecha.clicked.connect(self.switch)
+        self.generarIdConsulta.clicked.connect(self.validar_datos)
+        self.botonFecha.clicked.connect(self.seleccionar_fecha)
         self.actionRegresar.setShortcut("Ctrl+R")
         self.actionRegresar.triggered.connect(self.switch)
+        self.validar()
+
+    def validar(self):
+        self.inputIdMedico.textChanged.connect(self.validar_id_medico)
+        self.inputIdPaciente.textChanged.connect(self.validar_id_paciente)
+        #self.inputIdConsulta.textChanged.connect(self.validar_id_consulta)
+        pass
+
+    def validar_id_medico(self):
+        id_medico = self.inputIdMedico.text()
+        validar = re.match("^\d{1,}$", id_medico, re.I)
+        if id_medico == "":
+            self.inputIdMedico.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputIdMedico.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputIdMedico.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_id_paciente(self):
+        id_paciente = self.inputIdPaciente.text()
+        validar = re.match("^\d{1,}$", id_paciente, re.I)
+        if id_paciente == "":
+            self.inputIdPaciente.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputIdPaciente.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputIdPaciente.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def seleccionar_motivo(self):
+        motivo = self.inputMotivoConsulta.currentText()
+        if motivo == "":
+            return False
+        else:
+            return True
+
+    def seleccionar_fecha(self):
+        fecha_2 = datetime.date.today()
+        fecha_3 = str(fecha_2)
+        self.FechaAuto.setText(str(fecha_3))
+        if fecha_3 == "":
+            return False
+        else:
+            return True
+
+    def validar_datos(self):
+        if self.validar_id_medico() and self.validar_id_paciente() and self.seleccionar_motivo() and self.seleccionar_fecha():
+            QMessageBox.information(
+                    self, "Datos guardados", "Se genero su ID de consulta correctamente", QMessageBox.Discard)
+            self.switch()
+        else:
+           QMessageBox.warning(
+                self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
 
     def estilos(self):
         estilo = """
