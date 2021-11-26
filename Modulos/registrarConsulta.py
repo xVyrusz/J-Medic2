@@ -14,7 +14,7 @@ class WindowTwo(QtWidgets.QMainWindow):
         self.setWindowTitle("J-Medic: Registrar Consulta")
         self.stylesheet = self.estilos()
         self.setStyleSheet(self.stylesheet)
-        self.guardarConsulta.clicked.connect(self.switch)
+        self.guardarConsulta.clicked.connect(self.validar_datos_2)
         self.generarIdConsulta.clicked.connect(self.validar_datos)
         self.botonFecha.clicked.connect(self.seleccionar_fecha)
         self.actionRegresar.setShortcut("Ctrl+R")
@@ -25,6 +25,9 @@ class WindowTwo(QtWidgets.QMainWindow):
         self.inputIdMedico.textChanged.connect(self.validar_id_medico)
         self.inputIdPaciente.textChanged.connect(self.validar_id_paciente)
         #self.inputIdConsulta.textChanged.connect(self.validar_id_consulta)
+        self.inputPruebasRealizadas.textChanged.connect(self.validar_pruebas)
+        self.inputDiagnostico.textChanged.connect(self.validar_diagnostico)
+        self.inputTratamiento.textChanged.connect(self.validar_tratamiento)
         pass
 
     def validar_id_medico(self):
@@ -73,10 +76,75 @@ class WindowTwo(QtWidgets.QMainWindow):
         if self.validar_id_medico() and self.validar_id_paciente() and self.seleccionar_motivo() and self.seleccionar_fecha():
             QMessageBox.information(
                     self, "Datos guardados", "Se genero su ID de consulta correctamente", QMessageBox.Discard)
-            self.switch()
         else:
            QMessageBox.warning(
                 self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
+
+    def validar_id_consulta(self):
+        id_consulta = self.inputIdConsulta.text()
+        validar = re.match("^\d{1,}$", id_consulta, re.I)
+        if id_consulta == "":
+            self.inputIdConsulta.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputIdConsulta.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputIdConsulta.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_pruebas(self):
+        pruebas = self.inputPruebasRealizadas.toPlainText()
+        validar = re.match(
+            "^[\w'\-,.][^_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", pruebas, re.I)
+        if pruebas == "":
+            self.inputPruebasRealizadas.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputPruebasRealizadas.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputPruebasRealizadas.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_diagnostico(self):
+        diag = self.inputDiagnostico.toPlainText()
+        validar = re.match(
+            "^[\w'\-,.][^_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", diag, re.I)
+        if diag == "":
+            self.inputDiagnostico.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputDiagnostico.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputDiagnostico.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_tratamiento(self):
+        trata = self.inputTratamiento.toPlainText()
+        validar = re.match(
+            "^[\w'\-,.][^_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", trata, re.I)
+        if trata == "":
+            self.inputTratamiento.setStyleSheet("border: 2px solid yellow;")
+            return False
+        elif not validar:
+            self.inputTratamiento.setStyleSheet("border: 2px solid red;")
+            return False
+        else:
+            self.inputTratamiento.setStyleSheet("border: 2px solid green;")
+            return True
+
+    def validar_datos_2(self):
+        cont = 0
+        if self.validar_id_consulta() and self.validar_pruebas() and self.validar_diagnostico() and self.validar_tratamiento():
+            QMessageBox.information(
+                    self, "Datos guardados", "Se genero su consulta correctamente", QMessageBox.Discard)
+            self.switch()
+        else:
+            QMessageBox.warning(
+                self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard) 
+
 
     def estilos(self):
         estilo = """
