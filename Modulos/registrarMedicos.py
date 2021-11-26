@@ -5,6 +5,7 @@ import cv2
 import os
 import numpy as np
 import imutils
+import Modulos.db_medicos as medicos
 
 class WindowTwo(QtWidgets.QMainWindow):
 
@@ -118,9 +119,18 @@ class WindowTwo(QtWidgets.QMainWindow):
 
     def validar_datos(self):
         if self.validar_nombre() and self.validar_cedula() and self.validar_apellidoP() and self.validar_turno() and self.validar_apellidoM() and self.validar_telefono() and self.validar_password():
-            QMessageBox.information(
+            turno = 0
+            if self.inputTurno.currentText() == 'Matutino':
+                turno = 1
+            else: 
+                turno = 2
+
+            result = medicos.insertar_medicos(self.inputNombre.text(), self.inputAp.text(), self.inputAm.text(
+            ), self.inputCedula.text(), self.inputTelefono.text(), self.inputTurno.currentText(), self.inputContra.text())
+            if result == 1:
+                QMessageBox.information(
                     self, "Datos guardados", "Su informacion se ha guardado correctamente", QMessageBox.Discard)
-            self.switch()
+                self.switch()
         else:
            QMessageBox.warning(
                 self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)

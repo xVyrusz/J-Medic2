@@ -1,6 +1,7 @@
 import re
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
+import Modulos.db_pacientes as pacientes
 
 class WindowTwo(QtWidgets.QMainWindow):
 
@@ -155,7 +156,34 @@ class WindowTwo(QtWidgets.QMainWindow):
 
     def validar_datos(self):
         if self.validar_nombre() and self.validar_sexo() and self.validar_apellidoP() and self.validar_peso() and self.validar_apellidoM() and self.validar_estatura() and self.validar_telefono() and self.validar_anios() and self.validar_alergia() and self.validar_sangre():
-            QMessageBox.information(
+            sangre = 0
+            if self.inputTipoSangre.currentText() == 'A+':
+                sangre = 1
+            elif self.inputTipoSangre.currentText() == 'A-':
+                sangre = 2
+            elif self.inputTipoSangre.currentText() == 'B+':
+                sangre = 3
+            elif self.inputTipoSangre.currentText() == 'B-':
+                sangre = 4
+            elif self.inputTipoSangre.currentText() == 'O+':
+                sangre = 5
+            elif self.inputTipoSangre.currentText() == 'O-':
+                sangre = 6
+            elif self.inputTipoSangre.currentText() == 'AB+':
+                sangre = 7
+            elif self.inputTipoSangre.currentText() == 'AB-':
+                sangre = 8
+            pesok = self.inputKg.currentText()
+            pesog = self.inputG.currentText()
+            peso = str(pesok+pesog)
+            estaturam = self.inputM.currentText()
+            estaturacm = self.inputCm.currentText()
+            estatura = str(estaturam + estaturacm)
+
+            result = pacientes.insertar_pacientes(self.inputNombre.text(), self.inputAp.text(), self.inputAm.text(), self.inputSexo.currentText()
+            , peso, estatura, self.inputEdad.currentText(), self.inputTelefono.text(), self.inputAlergias.toPlainText(), sangre)
+            if result == 1:
+                QMessageBox.information(
                     self, "Datos guardados", "Su informacion se ha guardado correctamente", QMessageBox.Discard)
             self.switch()
         else:
