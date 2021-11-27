@@ -1,6 +1,7 @@
 import re
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
+import Modulos.db_citas  as cita
 
 class WindowTwo(QtWidgets.QMainWindow):
 
@@ -68,9 +69,32 @@ class WindowTwo(QtWidgets.QMainWindow):
 
     def validar_datos(self):
         if self.validar_id_paciente() and self.validar_fecha():
-            QMessageBox.information(
-                    self, "Datos guardados", "Su cita se genero correctamente", QMessageBox.Discard)
-            self.switch()
+            anio = self.inputA.currentText()
+            mes = self.inputM.currentText()
+            dia = self.inputD.currentText()
+            hora = self.inputH.currentText()
+            minutos = self.inputMin.currentText()     
+            fecha=str(anio+mes+dia+hora+minutos)     
+            result=cita.insertar_cita(self.inputIdPaciente.text(),fecha)
+            if result == 1:
+                result2=cita.mostrar_citas()
+                ayuda = result2
+                try:
+                    if ayuda:
+                        contador = 0
+                        for elements in ayuda:
+                            self.tablaCitas.setItem(contador , 0, QTableWidgetItem(str(ayuda[contador][0])))
+                            self.tablaCitas.setItem(contador , 1, QTableWidgetItem(str(ayuda[contador][1])))
+                            self.tablaCitas.setItem(contador , 2, QTableWidgetItem(str(ayuda[contador][2])))
+                            self.tablaCitas.setItem(contador , 3, QTableWidgetItem(ayuda[contador][3]))
+                            self.tablaCitas.setItem(contador , 4, QTableWidgetItem(ayuda[contador][4]))
+                            self.tablaCitas.setItem(contador , 5, QTableWidgetItem(str(ayuda[contador][5])))
+                            contador+=1            
+                    else:
+                        QMessageBox.warning(self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
+                except:
+                    QMessageBox.warning(self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
+
         else:
             QMessageBox.warning(self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
 

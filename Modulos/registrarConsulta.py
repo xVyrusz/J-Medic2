@@ -2,7 +2,7 @@ import re
 import datetime
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
-
+import Modulos.db_consultas as consultas
 
 class WindowTwo(QtWidgets.QMainWindow):
 
@@ -74,11 +74,53 @@ class WindowTwo(QtWidgets.QMainWindow):
 
     def validar_datos(self):
         if self.validar_id_medico() and self.validar_id_paciente() and self.seleccionar_motivo() and self.seleccionar_fecha():
-            QMessageBox.information(
-                    self, "Datos guardados", "Se genero su ID de consulta correctamente", QMessageBox.Discard)
-        else:
-           QMessageBox.warning(
-                self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
+            motivo = 0
+            if self.inputMotivoConsulta.currentText() == 'Consulta general':
+                motivo = 1
+            elif self.inputMotivoConsulta.currentText() == 'Examenes':
+                motivo = 2
+            elif self.inputMotivoConsulta.currentText() == 'Curaciones':
+                motivo = 3
+            else:
+                motivo = 1
+            fecha_2 = datetime.date.today()
+            fecha_3 = str(fecha_2)
+            self.FechaAuto.setText(str(fecha_3))
+            result = consultas.insertar_datos_de_consulta(
+                self.inputIdMedico.text(), self.inputIdPaciente.text(), fecha_2, motivo)
+            if result == 1:
+                result2 = consultas.mostrar_datos_consulta()
+                print(result2)
+
+                ayuda = result2
+                try:
+                    if ayuda:
+                        contador = 0
+                        for elements in ayuda:
+                            self.tablaConsultas.setItem(
+                                contador, 0, QTableWidgetItem(str(ayuda[contador][0])))
+                            self.tablaConsultas.setItem(
+                                contador, 1, QTableWidgetItem(ayuda[contador][1]))
+                            self.tablaConsultas.setItem(
+                                contador, 2, QTableWidgetItem(str(ayuda[contador][2])))
+                            self.tablaConsultas.setItem(
+                                contador, 3, QTableWidgetItem(ayuda[contador][3]))
+                            self.tablaConsultas.setItem(
+                                contador, 4, QTableWidgetItem(ayuda[contador][4]))
+                            self.tablaConsultas.setItem(
+                                contador, 5, QTableWidgetItem(str(ayuda[contador][5])))
+                            self.tablaConsultas.setItem(
+                                contador, 6, QTableWidgetItem(str(ayuda[contador][6])))
+                            contador += 1
+                    else :         
+                        QMessageBox.information(
+                            self, "Datos guardados", "Se genero su ID de consulta correctamente", QMessageBox.Discard)
+                except : 
+                    QMessageBox.information(
+                        self, "Datos guardados", "Se genero su ID de consulta correctamente", QMessageBox.Discard)
+            else:
+                QMessageBox.warning(
+                    self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
 
     def validar_id_consulta(self):
         id_consulta = self.inputIdConsulta.text()
@@ -138,9 +180,13 @@ class WindowTwo(QtWidgets.QMainWindow):
     def validar_datos_2(self):
         cont = 0
         if self.validar_id_consulta() and self.validar_pruebas() and self.validar_diagnostico() and self.validar_tratamiento():
-            QMessageBox.information(
+            result =consultas.insertar_consulta(self.inputIdConsulta.text(),self.inputPruebasRealizadas.toPlainText(),self.inputDiagnostico.toPlainText()
+            ,self.inputTratamiento.toPlainText())
+            print(result)
+            if result == 1:
+                QMessageBox.information(
                     self, "Datos guardados", "Se genero su consulta correctamente", QMessageBox.Discard)
-            self.switch()
+            #self.switch()
         else:
             QMessageBox.warning(
                 self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard) 

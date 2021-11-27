@@ -179,9 +179,9 @@
     <widget class="QTableWidget" name="tablaConsultas">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>250</y>
-       <width>911</width>
+       <x>180</x>
+       <y>240</y>
+       <width>731</width>
        <height>131</height>
       </rect>
      </property>
@@ -427,7 +427,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1150</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">

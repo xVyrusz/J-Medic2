@@ -31,3 +31,118 @@ def insertar_medicos(nombre, apellidop, apellidom, cedula, telefono, id_turnos, 
     finally:
         mydb.close()
         mycursor.close()
+
+
+def buscar_medicos_cedula(id):
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        if id:
+            consult = """
+            SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+            FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+             WHERE Cedula= {}""".format(id)
+        else:
+            raise Exception('Id is needed')
+        mycursor.execute(consult)
+        result = mycursor.fetchone()
+        return result
+    except:
+        print('Something wrong happend buscar id 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()
+
+def buscar_medicos_id(id):
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        if id:
+            consult = """
+            SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+            FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+             WHERE idMedicos= {}""".format(id)
+        else:
+            raise Exception('Id is needed')
+        mycursor.execute(consult)
+        result = mycursor.fetchone()
+        return result
+    except:
+        print('Something wrong happend buscar id 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()
+
+def buscar_medicos_nombre(id):
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        if id:
+            consult = """
+            SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+            FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+             WHERE nombreMedico= {}""".format(id)
+        else:
+            raise Exception('nombre is needed')
+        mycursor.execute(consult)
+        result = mycursor.fetchall()
+        return result
+    except:
+        print('Something wrong happend buscar nomb 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()
+
+def buscar_medicos_apellido(id):
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        if id:
+            consult = """
+            SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+            FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+             WHERE medicos.apellidoPMedico= {}""".format(id)
+        else:
+            raise Exception('Id is needed')
+        mycursor.execute(consult)
+        result = mycursor.fetchall()
+        return result
+    except:
+        print('Something wrong happend buscar apellido 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()
+
+def buscar_medicos_turno(id):
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        if id:
+            consult = """
+                    SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+                    FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+             WHERE turnos.nombreTurno= {}""".format(id)
+        else:
+            raise Exception('Id is needed')
+        mycursor.execute(consult)
+        result = mycursor.fetchall()
+        return result
+    except:
+        print('Something wrong happend buscar turno 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()
+
+def mostrar_medicos():
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        consult = "SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos"
+        mycursor.execute(consult)
+        result2 = mycursor.fetchall()
+        return result2
+    except:
+        print('Something wrong happend 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()

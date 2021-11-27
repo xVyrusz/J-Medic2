@@ -29,7 +29,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.buscarPaciente.clicked.connect(self.switch6)
         self.buscarConsulta.clicked.connect(self.switch7)
         self.buscarCita.clicked.connect(self.switch8)
-        self.siguiente.clicked.connect(self.switch9)
         self.actionCerrar_Sesion.setShortcut("Ctrl+R")
         self.actionCerrar_Sesion.triggered.connect(self.switch10)
 
@@ -56,10 +55,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def switch8(self):
         self.switch_window8.emit()
-
-    def switch9(self):
-        self.switch_window9.emit()
-
+        
     def switch10(self):
         self.switch_window10.emit()
 
