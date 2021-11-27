@@ -38,6 +38,7 @@ def buscar_pacientes_id(id):
         mydb.close()
         mycursor.close()
 
+
 def buscar_pacientes_nombre(id):
     try:
         mydb = conexion.conexion()
@@ -45,18 +46,19 @@ def buscar_pacientes_nombre(id):
         if id:
             consult = """
             SELECT pacientes.idPaciente,nombrePaciente,apellidoPPaciente,apellidoMPaciente,sexoPaciente,pesoPaciente,estaturaPaciente,edadPaciente,telefonoPaciente,tipo_sangre.nombreSangre,pacientes.alergiasPaciente 
-                FROM pacientes inner join tipo_sangre on pacientes.idTipo_sangre_F=tipo_sangre.idTipo_sangre
-                WHERE pacientes.nombrePaciente= {}""".format(id)
+            FROM pacientes inner join tipo_sangre on pacientes.idTipo_sangre_F=tipo_sangre.idTipo_sangre
+            WHERE  pacientes.nombrePaciente= '{}' """.format(id)
         else:
             raise Exception('Id is needed')
         mycursor.execute(consult)
-        result = mycursor.fetchone()
+        result = mycursor.fetchall()
         return result
     except:
-        print('Something wrong happend  nombre 😡😡😡😠😡😡😡')
+        print('Something wrong happend 😡😡😡😠😡😡😡')
     finally:
         mydb.close()
         mycursor.close()
+
 
 def buscar_pacientes_apellido(id):
     try:
@@ -65,15 +67,15 @@ def buscar_pacientes_apellido(id):
         if id:
             consult = """
             SELECT pacientes.idPaciente,nombrePaciente,apellidoPPaciente,apellidoMPaciente,sexoPaciente,pesoPaciente,estaturaPaciente,edadPaciente,telefonoPaciente,tipo_sangre.nombreSangre,pacientes.alergiasPaciente 
-                FROM pacientes inner join tipo_sangre on pacientes.idTipo_sangre_F=tipo_sangre.idTipo_sangre
-                WHERE pacientes.apellidoPPaciente= {}""".format(id)
+            FROM pacientes inner join tipo_sangre on pacientes.idTipo_sangre_F=tipo_sangre.idTipo_sangre
+            WHERE  pacientes.apellidoPPaciente= '{}' """.format(id)
         else:
             raise Exception('Id is needed')
         mycursor.execute(consult)
-        result = mycursor.fetchone()
+        result = mycursor.fetchall()
         return result
     except:
-        print('Something wrong happend  apellido 😡😡😡😠😡😡😡')
+        print('Something wrong happend 😡😡😡😠😡😡😡')
     finally:
         mydb.close()
         mycursor.close()

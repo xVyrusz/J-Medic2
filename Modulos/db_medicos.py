@@ -73,7 +73,7 @@ def buscar_medicos_id(id):
         mydb.close()
         mycursor.close()
 
-def buscar_medicos_nombre(id):
+def buscar_medicos_nombres(id):
     try:
         mydb = conexion.conexion()
         mycursor = mydb.cursor()
@@ -81,7 +81,7 @@ def buscar_medicos_nombre(id):
             consult = """
             SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
             FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
-             WHERE nombreMedico= {}""".format(id)
+             WHERE medicos.nombreMedico= {}""".format(id)
         else:
             raise Exception('nombre is needed')
         mycursor.execute(consult)
@@ -93,25 +93,48 @@ def buscar_medicos_nombre(id):
         mydb.close()
         mycursor.close()
 
-def buscar_medicos_apellido(id):
+def buscar_medicos_nombre(id):
     try:
         mydb = conexion.conexion()
         mycursor = mydb.cursor()
         if id:
             consult = """
-            SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
-            FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
-             WHERE medicos.apellidoPMedico= {}""".format(id)
+                SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+                    FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+                    WHERE medicos.nombreMedico= '{}' """.format(id)
         else:
             raise Exception('Id is needed')
         mycursor.execute(consult)
         result = mycursor.fetchall()
         return result
     except:
-        print('Something wrong happend buscar apellido 😡😡😡😠😡😡😡')
+        print('Something wrong happend 😡😡😡😠😡😡😡')
     finally:
         mydb.close()
         mycursor.close()
+
+
+def buscar_medicos_apellido(id):
+    try:
+        mydb = conexion.conexion()
+        mycursor = mydb.cursor()
+        if id:
+            consult = """
+                SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+                    FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
+                    WHERE medicos.apellidoPMedico= '{}' """.format(id)
+        else:
+            raise Exception('Id is needed')
+        mycursor.execute(consult)
+        result = mycursor.fetchall()
+        return result
+    except:
+        print('Something wrong happend 😡😡😡😠😡😡😡')
+    finally:
+        mydb.close()
+        mycursor.close()
+
+
 
 def buscar_medicos_turno(id):
     try:
@@ -119,19 +142,20 @@ def buscar_medicos_turno(id):
         mycursor = mydb.cursor()
         if id:
             consult = """
-                    SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
+                SELECT medicos.idMedicos,nombreMedico,apellidoPMedico,apelLidoMMedico,Cedula,Telefono,turnos.nombreTurno 
                     FROM medicos inner join turnos on medicos.idTurnos_F=turnos.idTurnos
-             WHERE turnos.nombreTurno= {}""".format(id)
+                    WHERE turnos.nombreTurno= '{}' """.format(id)
         else:
             raise Exception('Id is needed')
         mycursor.execute(consult)
         result = mycursor.fetchall()
         return result
     except:
-        print('Something wrong happend buscar turno 😡😡😡😠😡😡😡')
+        print('Something wrong happend 😡😡😡😠😡😡😡')
     finally:
         mydb.close()
         mycursor.close()
+
 
 def mostrar_medicos():
     try:

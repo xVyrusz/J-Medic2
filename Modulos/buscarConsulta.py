@@ -13,7 +13,7 @@ class WindowTwo(QtWidgets.QMainWindow):
         self.setWindowTitle("J-Medic: Buscar Medico")
         self.stylesheet = self.estilos()
         self.setStyleSheet(self.stylesheet)
-        self.botonBuscar.clicked.connect(self.switch)
+        self.botonBuscar.clicked.connect(self.mostrar_consultas_all)
         self.buscarIdConsulta.clicked.connect(self.validar_datos_idc)
         self.buscarIdMedico.clicked.connect(self.validar_datos_id)
         self.buscarIdPaciente.clicked.connect(self.validar_datos)
@@ -204,6 +204,43 @@ class WindowTwo(QtWidgets.QMainWindow):
                 QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
         else:
             QMessageBox.warning(self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
+
+
+    def mostrar_consultas_all(self):
+            result2 = consultas.mostrar_datos_consulta_completa()
+            print (result2)
+            ayuda2 = result2
+            try:
+                    if ayuda2:
+                        contador = 0
+                        for elements in ayuda2:
+                            self.TablaConsultas.setItem(
+                                contador, 0, QTableWidgetItem(str(ayuda2[contador][0])))
+                            self.TablaConsultas.setItem(
+                                contador, 1, QTableWidgetItem(ayuda2[contador][1]))
+                            self.TablaConsultas.setItem(
+                                contador, 2, QTableWidgetItem(str(ayuda2[contador][2])))
+                            self.TablaConsultas.setItem(
+                                contador, 3, QTableWidgetItem(ayuda2[contador][3]))
+                            self.TablaConsultas.setItem(
+                                contador, 4, QTableWidgetItem(ayuda2[contador][4]))
+                            self.TablaConsultas.setItem(
+                                contador, 5, QTableWidgetItem(str(ayuda2[contador][5])))
+                            self.TablaConsultas.setItem(
+                                contador, 6, QTableWidgetItem(str(ayuda2[contador][6])))
+                            self.TablaConsultas.setItem(
+                                contador, 7, QTableWidgetItem(str(ayuda2[contador][7])))
+                            self.TablaConsultas.setItem(
+                                contador, 8, QTableWidgetItem(str(ayuda2[contador][8])))  
+                            self.TablaConsultas.setItem(
+                                contador, 9, QTableWidgetItem(str(ayuda2[contador][9])))                             
+                            contador += 1
+                    else:
+                        QMessageBox.warning(
+                            self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
+            except:
+                    QMessageBox.warning(
+                        self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
 
     def estilos(self):
         estilo = """
