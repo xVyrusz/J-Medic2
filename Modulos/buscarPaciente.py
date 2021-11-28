@@ -111,7 +111,7 @@ class WindowTwo(QtWidgets.QMainWindow):
                             self.tablaPacientes.setItem(
                                 contador, 10, QTableWidgetItem(str(ayuda2[contador][10])))
                             contador += 1
-                            QMessageBox.information(
+                        QMessageBox.information(
                                 self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
                     else:
                         QMessageBox.warning(

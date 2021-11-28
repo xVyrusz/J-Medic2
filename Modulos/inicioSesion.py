@@ -3,7 +3,7 @@ from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import cv2
 import os
-
+import Modulos.db_iniciosesion as comprobar
 class Login(QtWidgets.QMainWindow):
 
     switch_window = QtCore.pyqtSignal()
@@ -14,8 +14,9 @@ class Login(QtWidgets.QMainWindow):
         self.setWindowTitle("J-Medic: Inicio de Sesion")
         self.stylesheet = self.estilos()
         self.setStyleSheet(self.stylesheet)
-        self.pushButton.clicked.connect(self.login)
+        self.pushButton.clicked.connect(self.validar_datos)
         self.pushButton_2.clicked.connect(self.login2)
+        self.validar()
 
     def estilos(self):
         estilo = """
@@ -64,8 +65,65 @@ class Login(QtWidgets.QMainWindow):
         """
         return estilo
 
+
+    def validar(self):
+        self.inputUsuario.textChanged.connect(self.validar_usuario)
+        pass
+
+
+    def validar_contra(self):
+        result = comprobar.comprobar_inicio_contra()
+        contra = self.inputPassword.text()
+        encontro = 0
+        try:
+            contador = 0
+            for elements in result:
+                if bcrypt.checkpw(contra.encode(), result[contador][0].encode()):
+                    encontro += 1
+                    break
+                else:
+                    pass
+                contador += 1
+            if encontro>=1:
+                return True
+            else:
+                return False
+        except:
+            pass
+
+    def validar_usuario(self):
+        result = comprobar.comprobar_inicio_usuario()
+        user = self.inputUsuario.text()
+        encontro = 0
+        try:
+            contador = 0
+            for elements in result:
+                if user == result[contador][0]:
+                    encontro += 1
+                    break
+                else:
+                    pass
+                contador += 1
+            if encontro>=1:
+                return True
+            else:
+                return False
+        except:
+            pass
+
     def login(self):
         self.switch_window.emit()
+
+    def validar_datos(self):
+        if self.validar_usuario() and self.validar_contra():
+            QMessageBox.information(
+                self, "Exito", "Ingreso correctamente", QMessageBox.Discard)
+            self.login()
+        else:
+            QMessageBox.warning(
+                self, "Error", "El usuario o la contraseña estan incorrectos", QMessageBox.Discard)
+
+
 
     def login2(self):
         dataPath = "./Data"

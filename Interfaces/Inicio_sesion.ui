@@ -70,7 +70,7 @@
       <string>Ingresar</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="inputUsuario">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -86,7 +86,7 @@
       <string>Usuario</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="inputPassword">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -152,7 +152,7 @@
      <x>0</x>
      <y>0</y>
      <width>1150</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

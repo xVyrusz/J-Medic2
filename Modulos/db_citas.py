@@ -72,7 +72,7 @@ def buscar_cita_fecha(fecha):
         mydb = conexion.conexion()
         mycursor = mydb.cursor()
         sql = """select cita.idCita,cita.idPaciente_F,pacientes.nombrePaciente,pacientes.apellidoPPaciente,pacientes.apellidoMPaciente,cita.fechaCita 
-                FROM cita inner join pacientes on pacientes.nombrePaciente = pacientes.nombrePaciente WHERE cita.fechaCita = '{}' """.format(fecha)
+                FROM cita inner join pacientes on pacientes.idPaciente=cita.idPaciente_F  WHERE fechaCita = '{}' """.format(fecha)
         mycursor.execute(sql)
         result = mycursor.fetchall()
         return result

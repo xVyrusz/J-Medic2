@@ -33,7 +33,7 @@ class WindowTwo(QtWidgets.QMainWindow):
 
     def validar_cedula(self):
         cedula = self.inputCedula.text()
-        validar = re.match("^\d{10}$", cedula, re.I)
+        validar = re.match("^\d{7,8}$", cedula, re.I)
         if cedula == "":
             self.inputCedula.setStyleSheet("border: 2px solid yellow;")
             return False
@@ -57,7 +57,7 @@ class WindowTwo(QtWidgets.QMainWindow):
                 self.tablaMedicos.setItem(0 , 5, QTableWidgetItem(ayuda[5]))
                 self.tablaMedicos.setItem(0 , 6, QTableWidgetItem(ayuda[6]))
                 QMessageBox.information(
-                self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
+                    self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
             except:
                 QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
         else:
@@ -89,7 +89,7 @@ class WindowTwo(QtWidgets.QMainWindow):
                 self.tablaMedicos.setItem(0 , 5, QTableWidgetItem(ayuda[5]))
                 self.tablaMedicos.setItem(0 , 6, QTableWidgetItem(ayuda[6]))
                 QMessageBox.information(
-                self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
+                    self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
             except:
                 QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
         else:
@@ -132,23 +132,15 @@ class WindowTwo(QtWidgets.QMainWindow):
                             contador, 5, QTableWidgetItem(str(ayuda2[contador][5])))
                         self.tablaMedicos.setItem(
                             contador, 6, QTableWidgetItem(str(ayuda2[contador][6])))
-                        self.tablaMedicos.setItem(
-                            contador, 7, QTableWidgetItem(str(ayuda2[contador][7])))
-                        self.tablaMedicos.setItem(
-                            contador, 8, QTableWidgetItem(str(ayuda2[contador][8])))
-                        self.tablaMedicos.setItem(
-                            contador, 9, QTableWidgetItem(str(ayuda2[contador][9])))
-                        self.tablaMedicos.setItem(
-                            contador, 10, QTableWidgetItem(str(ayuda2[contador][10])))
-                        contador += 1
-                    QMessageBox.information(
-                            self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
+                        contador += 1 
+                        QMessageBox.information(
+                            self,"Correcto", "Busqueda exitosa", QMessageBox.Discard) 
                 else:
-                    QMessageBox.warning(
-                        self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
+                        QMessageBox.warning(
+                            self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             except:
                     QMessageBox.warning(
-                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
+                        self, "Error", "No se ha encontrado nada", QMessageBox.Discard)  
 
 
     def validar_apellidoP(self):
@@ -172,40 +164,32 @@ class WindowTwo(QtWidgets.QMainWindow):
             print (result)
             ayuda2 = result
             try:
-                    if ayuda2:
-                        contador = 0
-                        for elements in ayuda2:
-                            self.tablaMedicos.setItem(
-                                contador, 0, QTableWidgetItem(str(ayuda2[contador][0])))
-                            self.tablaMedicos.setItem(
-                                contador, 1, QTableWidgetItem(ayuda2[contador][1]))
-                            self.tablaMedicos.setItem(
-                                contador, 2, QTableWidgetItem(str(ayuda2[contador][2])))
-                            self.tablaMedicos.setItem(
-                                contador, 3, QTableWidgetItem(ayuda2[contador][3]))
-                            self.tablaMedicos.setItem(
-                                contador, 4, QTableWidgetItem(ayuda2[contador][4]))
-                            self.tablaMedicos.setItem(
-                                contador, 5, QTableWidgetItem(str(ayuda2[contador][5])))
-                            self.tablaMedicos.setItem(
-                                contador, 6, QTableWidgetItem(str(ayuda2[contador][6])))
-                            self.tablaMedicos.setItem(
-                                contador, 7, QTableWidgetItem(str(ayuda2[contador][7])))
-                            self.tablaMedicos.setItem(
-                                contador, 8, QTableWidgetItem(str(ayuda2[contador][8])))
-                            self.tablaMedicos.setItem(
-                                contador, 9, QTableWidgetItem(str(ayuda2[contador][9])))
-                            self.tablaMedicos.setItem(
-                                contador, 10, QTableWidgetItem(str(ayuda2[contador][10])))
-                            contador += 1
+                if ayuda2:
+                    contador = 0
+                    for elements in ayuda2:
+                        self.tablaMedicos.setItem(
+                            contador, 0, QTableWidgetItem(str(ayuda2[contador][0])))
+                        self.tablaMedicos.setItem(
+                            contador, 1, QTableWidgetItem(ayuda2[contador][1]))
+                        self.tablaMedicos.setItem(
+                            contador, 2, QTableWidgetItem(str(ayuda2[contador][2])))
+                        self.tablaMedicos.setItem(
+                            contador, 3, QTableWidgetItem(ayuda2[contador][3]))
+                        self.tablaMedicos.setItem(
+                            contador, 4, QTableWidgetItem(ayuda2[contador][4]))
+                        self.tablaMedicos.setItem(
+                            contador, 5, QTableWidgetItem(str(ayuda2[contador][5])))
+                        self.tablaMedicos.setItem(
+                            contador, 6, QTableWidgetItem(str(ayuda2[contador][6])))
+                        contador += 1  
                         QMessageBox.information(
-                                    self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
-                    else:
+                            self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
+                else:
                         QMessageBox.warning(
                             self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             except:
                     QMessageBox.warning(
-                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
+                        self, "Error", "No se ha encontrado nada", QMessageBox.Discard)  
 
     def validar_turno(self):
         turno = self.inputTurno.text()
@@ -239,9 +223,11 @@ class WindowTwo(QtWidgets.QMainWindow):
                         self.tablaMedicos.setItem(
                             contador, 6, QTableWidgetItem(str(ayuda2[contador][6])))
                         contador += 1
-                QMessageBox.information(
-                                self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
-                    
+                        QMessageBox.information(
+                            self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)  
+                else:
+                        QMessageBox.warning(
+                            self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             except:
                     QMessageBox.warning(
                         self, "Error", "No se ha encontrado nada", QMessageBox.Discard)                

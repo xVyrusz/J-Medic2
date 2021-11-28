@@ -61,6 +61,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                 self.TablaConsultas.setItem(0 , 7, QTableWidgetItem(str(ayuda[7])))
                 self.TablaConsultas.setItem(0 , 8, QTableWidgetItem(ayuda[8]))
                 self.TablaConsultas.setItem(0 , 9, QTableWidgetItem(ayuda[9]))
+                QMessageBox.information(
+                    self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
             except:
                 QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             #QMessageBox.information(self, "Datos guardados", "Su informacion se ha guardado correctamente", QMessageBox.Discard)
@@ -102,6 +104,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                         self.TablaConsultas.setItem(contador , 8, QTableWidgetItem(ayuda[contador][8]))
                         self.TablaConsultas.setItem(contador , 9, QTableWidgetItem(ayuda[contador][9]))
                         contador+=1
+                    QMessageBox.information(
+                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
                 else:
                     QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             except:
@@ -143,6 +147,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                         self.TablaConsultas.setItem(contador , 8, QTableWidgetItem(ayuda[contador][8]))
                         self.TablaConsultas.setItem(contador , 9, QTableWidgetItem(ayuda[contador][9]))
                         contador+=1
+                    QMessageBox.information(
+                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
                 else:
                     QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             except:
@@ -198,6 +204,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                         self.TablaConsultas.setItem(contador , 8, QTableWidgetItem(ayuda[contador][8]))
                         self.TablaConsultas.setItem(contador , 9, QTableWidgetItem(ayuda[contador][9]))
                         contador+=1
+                    QMessageBox.information(
+                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
                 else:
                     QMessageBox.warning(self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
             except:
@@ -235,6 +243,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                             self.TablaConsultas.setItem(
                                 contador, 9, QTableWidgetItem(str(ayuda2[contador][9])))                             
                             contador += 1
+                        QMessageBox.information(
+                            self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
                     else:
                         QMessageBox.warning(
                             self, "Error", "No se ha encontrado nada", QMessageBox.Discard)

@@ -91,7 +91,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                         self.tablaCita.setItem(
                             contador, 5, QTableWidgetItem(str(ayuda2[contador][5])))
                         contador += 1
-                        
+                    QMessageBox.information(
+                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)   
                 else:
                      QMessageBox.warning(
                         self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
@@ -160,6 +161,8 @@ class WindowTwo(QtWidgets.QMainWindow):
                         self.tablaCita.setItem(
                             contador, 5, QTableWidgetItem(str(ayuda2[contador][5])))
                         contador += 1
+                    QMessageBox.information(
+                        self,"Correcto", "Busqueda exitosa", QMessageBox.Discard)
                 else:
                      QMessageBox.warning(
                         self, "Error", "No se ha encontrado nada", QMessageBox.Discard)
