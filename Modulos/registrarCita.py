@@ -67,12 +67,16 @@ class WindowTwo(QtWidgets.QMainWindow):
         if fecha == "":
             return False
         else:
-            start = datetime.now()
-            TODAY_CHECK = datetime.strptime(fecha, "%Y-%m-%d %H:%M")
-            end = datetime.strptime("1-1-2031 12:30", "%d-%m-%Y %H:%M")
-            if start <= TODAY_CHECK <= end:
-                return True
-            else:
+            try:
+
+                start = datetime.now()
+                TODAY_CHECK = datetime.strptime(fecha, "%Y-%m-%d %H:%M")
+                end = datetime.strptime("1-1-2031 12:30", "%d-%m-%Y %H:%M")
+                if start <= TODAY_CHECK <= end:
+                    return True
+                else:
+                    return False
+            except:
                 return False
 
     def validar_datos(self):
@@ -83,7 +87,7 @@ class WindowTwo(QtWidgets.QMainWindow):
             hora = self.inputH.currentText()
             minutos = self.inputMin.currentText()     
             fecha=str(anio+mes+dia+hora+minutos)     
-            result=cita.insertar_cita(self.inputIdPaciente.text(),fecha)
+            result=cita.insertar_cita(self,self.inputIdPaciente.text(),fecha)
             if result == 1:
                 result2=cita.mostrar_citas()
                 ayuda = result2

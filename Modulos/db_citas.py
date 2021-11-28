@@ -1,7 +1,9 @@
+
 import Modulos.db_conexion as conexion
+from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
 
 
-def insertar_cita(idpaciente, fecha):
+def insertar_cita(self, idpaciente, fecha):
     try:
         mydb = conexion.conexion()
         mycursor = mydb.cursor()
@@ -12,7 +14,7 @@ def insertar_cita(idpaciente, fecha):
         result = 1
         return result
     except:
-        print('Something wrong happend insert 😡😡😡😠😡😡😡')
+        QMessageBox.warning(self, "Error", "Fecha de cita ya asignada", QMessageBox.Discard)
     finally:
         mydb.close()
         mycursor.close()
