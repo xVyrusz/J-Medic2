@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QMessageBox
 import cv2
 import os
 
-
 class Login(QtWidgets.QMainWindow):
 
     switch_window = QtCore.pyqtSignal()
@@ -107,7 +106,10 @@ class Login(QtWidgets.QMainWindow):
             cv2.imshow("frame",frame)
             k =cv2.waitKey(1)
             if k == 27 or salir == 1:
+                global salir2
+                salir2 = 1
                 break
         cap.release()
         cv2.destroyAllWindows()
-        self.switch_window.emit()
+        if salir2 == 1:
+            self.switch_window.emit()
