@@ -106,7 +106,10 @@ class Login(QtWidgets.QMainWindow):
 
             cv2.imshow("frame",frame)
             k =cv2.waitKey(1)
-            if k == 27 or salir == 1:
+            if k == 27:
+                salir2 = 0
+                break
+            if salir == 1:
                 salir2 = 1
                 break
         cap.release()
