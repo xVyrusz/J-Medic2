@@ -76,7 +76,7 @@ class WindowTwo(QtWidgets.QMainWindow):
 
     def validar_cedula(self):
         cedula = self.inputCedula.text()
-        validar = re.match("^\d{10}$", cedula, re.I)
+        validar = re.match("^\d{7,8}$", cedula, re.I)
         if cedula == "":
             self.inputCedula.setStyleSheet("border: 2px solid yellow;")
             return False
@@ -274,7 +274,7 @@ class WindowTwo(QtWidgets.QMainWindow):
             #Almacendnado el modelo obtenido
             face_recognizer.write("modeloEigenFaces.xml")
             QMessageBox.information(
-                    self, "Cara guardada", "Su informacion se ha guardado correctamente", QMessageBox.Discard)
+                    self, "IA", "Inteligencia artificial entrenada", QMessageBox.Discard)
         else:
            QMessageBox.warning(
                 self, "Error", "Ingresa los datos correctamente", QMessageBox.Discard)
