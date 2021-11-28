@@ -80,7 +80,8 @@ class Login(QtWidgets.QMainWindow):
 
         faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+"haarcascade_frontalface_default.xml")
         salir = 0
-
+        global salir2
+        salir2 = 0
         while True:
             ret, frame = cap.read()
             if ret == False: break
@@ -106,7 +107,6 @@ class Login(QtWidgets.QMainWindow):
             cv2.imshow("frame",frame)
             k =cv2.waitKey(1)
             if k == 27 or salir == 1:
-                global salir2
                 salir2 = 1
                 break
         cap.release()
