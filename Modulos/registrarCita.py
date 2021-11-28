@@ -2,6 +2,8 @@ import re
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
 import Modulos.db_citas  as cita
+from datetime import date
+from datetime import datetime
 
 class WindowTwo(QtWidgets.QMainWindow):
 
@@ -58,6 +60,11 @@ class WindowTwo(QtWidgets.QMainWindow):
         if minutos == "":
             cont+=1
 
+
+        if (anio==.format(today.year))
+            fg
+
+
         fecha=str(anio+mes+dia+hora+minutos)
         if cont>0:
             fecha=""
@@ -65,6 +72,21 @@ class WindowTwo(QtWidgets.QMainWindow):
         if fecha == "":
             return False
         else:
+            #TODAY_CHECK = datetime.now()
+            #TODAY_RESULT = ('%s-%s-%s' % (TODAY_CHECK.day, TODAY_CHECK.month, TODAY_CHECK.year))
+            #if '26-11-2017' <= TODAY_RESULT <= '30-11-2017':
+            #    print ("PASS!")
+            #else:
+            #    print ("YOU SHALL NOT PASS, FRODO.")
+#
+#
+            #now = datetime.now()
+#
+            #current_time = now.strftime("%H")
+            #print("Current Time =", current_time)
+#
+            #print (current_time)
+            #hacemos un array o diccionario para guardar la consulta de las fechas y compararla con la ingresada
             return True
 
     def validar_datos(self):
